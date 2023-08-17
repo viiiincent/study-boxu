@@ -60,10 +60,10 @@ func (app *application) snippetCreate(w http.ResponseWriter, r *http.Request) {
 }
 
 type snippetCreateForm struct {
-	Title		string	`form:"title"`
-	Content		string	`form:"content"`
-	Expires 	int		`form:"expires"`	
-	validator.Validator	`form:"-"`
+	Title       string  `form:"title"`
+	Content     string  `form:"content"`
+	Expires     int     `form:"expires"`
+	validator.Validator `form:"-"`
 }
 
 func (app *application) snippetCreatePost(w http.ResponseWriter, r *http.Request) {
@@ -98,9 +98,9 @@ func (app *application) snippetCreatePost(w http.ResponseWriter, r *http.Request
 }
 
 type userSignupForm struct {
-	Name		string `form:"name"`
-	Email		string `form:"email"`
-	Password	string `form:"password"`
+	Name        string `form:"name"`
+	Email       string `form:"email"`
+	Password    string `form:"password"`
 	validator.Validator `form:"-"`
 }
 
@@ -150,7 +150,7 @@ func (app *application) userSignupPost(w http.ResponseWriter, r *http.Request) {
 }
 
 type userLoginForm struct {
-	Email string	`form:"email"`
+	Email    string `form:"email"`
 	Password string	`form:"password"`
 	validator.Validator	`form:"-"`
 }
