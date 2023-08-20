@@ -19,18 +19,20 @@ import (
 )
 
 type application struct {
-	errorLog		*log.Logger
-	infoLog			*log.Logger
-	snippets		models.SnippetModelInterface
-	users			models.UserModelInterface
-	templateCache	map[string]*template.Template
-	formDecoder		*form.Decoder
-	sessionManager	*scs.SessionManager
+	debug           bool
+	errorLog        *log.Logger
+	infoLog         *log.Logger
+	snippets        models.SnippetModelInterface
+	users           models.UserModelInterface
+	templateCache   map[string]*template.Template
+	formDecoder     *form.Decoder
+	sessionManager  *scs.SessionManager
 }
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
 	dsn := flag.String("dsn", "web:pass@/boxu?parseTime=true", "MySQL data source name")
+	debug := flag.Bool("debug", false, "Enable debug mode") 
 	flag.Parse()
 
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
@@ -53,12 +55,13 @@ func main() {
 	sessionManager.Lifetime = 12 * time.Hour
 	sessionManager.Cookie.Secure = true
 	app := &application{
-		errorLog:		errorLog,
-		infoLog:		infoLog,
-		snippets:		&models.SnippetModel{DB: db},
-		users:			&models.UserModel{DB: db},
-		templateCache:	templateCache,
-		formDecoder:	formDecoder,
+		debug:          *debug,
+		errorLog:       errorLog,
+		infoLog:        infoLog,
+		snippets:       &models.SnippetModel{DB: db},
+		users:          &models.UserModel{DB: db},
+		templateCache:  templateCache,
+		formDecoder:    formDecoder,
 		sessionManager: sessionManager,
 	}
 
