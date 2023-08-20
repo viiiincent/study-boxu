@@ -2,7 +2,7 @@ package mocks
 
 import (
 	"time"
-	"example/snippetbox/internal/models"
+	"example/boxu/internal/models"
 )
 
 var mockSnippet = &models.Snippet{

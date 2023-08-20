@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"example/snippetbox/internal/models/mocks"
+	"example/boxu/internal/models/mocks"
 
 	"github.com/alexedwards/scs/v2"
 	"github.com/go-playground/form/v4"

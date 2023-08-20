@@ -1,7 +1,7 @@
 package mocks
 
 import (
-	"example/snippetbox/internal/models"
+	"example/boxu/internal/models"
 )
 
 type UserModel struct{}

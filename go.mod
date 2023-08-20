@@ -1,4 +1,4 @@
-module example/snippetbox
+module example/boxu
 
 go 1.20
 

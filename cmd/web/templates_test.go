@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"example/snippetbox/internal/assert"
+	"example/boxu/internal/assert"
 )
 
 func TestHumanDate(t *testing.T) {

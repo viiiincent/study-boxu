@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"testing"
 
-	"example/snippetbox/internal/assert"
+	"example/boxu/internal/assert"
 )
 
 func TestPing(t *testing.T) {
